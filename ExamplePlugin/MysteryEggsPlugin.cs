@@ -300,7 +300,8 @@ namespace MysteryEggs
                 // And then drop our defined item in front of the player.
 
                 Log.Info($"Player pressed F2. Spawning our custom item at coordinates {transform.position}");
-                PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(goldEgg.itemIndex), transform.position, transform.forward * 20f);
+                //PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(goldEgg.itemIndex), transform.position, transform.forward * 20f);
+                PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(goldEgg.itemIndex), transform.position, Vector3.zero);
             }
 
             if (Input.GetKeyDown(KeyCode.F4))
@@ -311,7 +312,7 @@ namespace MysteryEggs
                 // And then drop our defined item in front of the player.
 
                 Log.Info($"Player pressed F2. Spawning our custom item at coordinates {transform.position}");
-                PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(voidEgg.itemIndex), transform.position, transform.forward * 20f);
+                PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(voidEgg.itemIndex), transform.position, Vector3.zero);
             }
 
             if (Input.GetKeyDown(KeyCode.F5))
@@ -322,7 +323,7 @@ namespace MysteryEggs
                 // And then drop our defined item in front of the player.
 
                 Log.Info($"Player pressed F2. Spawning our custom item at coordinates {transform.position}");
-                PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(lunarEgg.itemIndex), transform.position, transform.forward * 20f);
+                PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(lunarEgg.itemIndex), transform.position, Vector3.zero);
             }
         }
     }
