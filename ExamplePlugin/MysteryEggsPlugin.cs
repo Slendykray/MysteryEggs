@@ -270,7 +270,10 @@ namespace MysteryEggs
                 var lunarCount = attackerCharacterBody.inventory.GetItemCount(lunarOnKill.itemIndex);
                 if (lunarCount > 0)
                 {
-                    PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(RoR2Content.MiscPickups.LunarCoin.miscPickupIndex), report.victim.transform.position, Vector3.up * 10f);            
+                    //if (Util.CheckRoll(80))
+                    //{
+                        PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(RoR2Content.MiscPickups.LunarCoin.miscPickupIndex), report.victim.transform.position, Vector3.up * 10f);
+                    //}                        
                 }
 
                 var voidCount = attackerCharacterBody.inventory.GetItemCount(voidOnKill.itemIndex);

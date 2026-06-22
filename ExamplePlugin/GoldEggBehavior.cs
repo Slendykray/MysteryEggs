@@ -88,7 +88,10 @@ namespace MysteryEggs
                     var body = newBody.GetComponent<CharacterBody>();
                     body.baseRegen = 0.6f;
                     body.levelRegen = 0.12f;
-                    body.baseMaxHealth = 500f;
+                    //base 500
+                    body.baseMaxHealth = 800f;
+                    //base 12
+                    body.baseDamage = 20f;
                     newMaster.GetComponent<CharacterMaster>().bodyPrefab = newBody;
 
 
