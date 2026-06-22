@@ -120,7 +120,7 @@ namespace MysteryEggs
             voidEgg.loreToken = "VOIDEGG_LORE";
 
 #pragma warning disable Publicizer001
-            voidEgg._itemTierDef = Addressables.LoadAssetAsync<ItemTierDef>("RoR2/DLC1/Common/VoidTier1Def.asset").WaitForCompletion();
+            voidEgg._itemTierDef = Addressables.LoadAssetAsync<ItemTierDef>("RoR2/DLC1/Common/VoidTier2Def.asset").WaitForCompletion();
 #pragma warning restore Publicizer001
             //voidEgg.pickupIconSprite = Addressables.LoadAssetAsync<Sprite>("RoR2/Base/FireBallDash/texEggIcon.png").WaitForCompletion();
             voidEgg.pickupIconSprite = Asset.mainBundle.LoadAsset<Sprite>("texVoid");
@@ -295,39 +295,39 @@ namespace MysteryEggs
         private void Update()
         {
             // This if statement checks if the player has currently pressed F2.
-            if (Input.GetKeyDown(KeyCode.F2))
-            {
-                // Get the player body to use a position:
-                var transform = PlayerCharacterMasterController.instances[0].master.GetBodyObject().transform;
+            //if (Input.GetKeyDown(KeyCode.F2))
+            //{
+            //    // Get the player body to use a position:
+            //    var transform = PlayerCharacterMasterController.instances[0].master.GetBodyObject().transform;
 
-                // And then drop our defined item in front of the player.
+            //    // And then drop our defined item in front of the player.
 
-                Log.Info($"Player pressed F2. Spawning our custom item at coordinates {transform.position}");
-                //PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(goldEgg.itemIndex), transform.position, transform.forward * 20f);
-                PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(goldEgg.itemIndex), transform.position, Vector3.zero);
-            }
+            //    Log.Info($"Player pressed F2. Spawning our custom item at coordinates {transform.position}");
+            //    //PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(goldEgg.itemIndex), transform.position, transform.forward * 20f);
+            //    PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(goldEgg.itemIndex), transform.position, Vector3.zero);
+            //}
 
-            if (Input.GetKeyDown(KeyCode.F4))
-            {
-                // Get the player body to use a position:
-                var transform = PlayerCharacterMasterController.instances[0].master.GetBodyObject().transform;
+            //if (Input.GetKeyDown(KeyCode.F4))
+            //{
+            //    // Get the player body to use a position:
+            //    var transform = PlayerCharacterMasterController.instances[0].master.GetBodyObject().transform;
 
-                // And then drop our defined item in front of the player.
+            //    // And then drop our defined item in front of the player.
 
-                Log.Info($"Player pressed F2. Spawning our custom item at coordinates {transform.position}");
-                PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(voidEgg.itemIndex), transform.position, Vector3.zero);
-            }
+            //    Log.Info($"Player pressed F2. Spawning our custom item at coordinates {transform.position}");
+            //    PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(voidEgg.itemIndex), transform.position, Vector3.zero);
+            //}
 
-            if (Input.GetKeyDown(KeyCode.F5))
-            {
-                // Get the player body to use a position:
-                var transform = PlayerCharacterMasterController.instances[0].master.GetBodyObject().transform;
+            //if (Input.GetKeyDown(KeyCode.F5))
+            //{
+            //    // Get the player body to use a position:
+            //    var transform = PlayerCharacterMasterController.instances[0].master.GetBodyObject().transform;
 
-                // And then drop our defined item in front of the player.
+            //    // And then drop our defined item in front of the player.
 
-                Log.Info($"Player pressed F2. Spawning our custom item at coordinates {transform.position}");
-                PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(lunarEgg.itemIndex), transform.position, Vector3.zero);
-            }
+            //    Log.Info($"Player pressed F2. Spawning our custom item at coordinates {transform.position}");
+            //    PickupDropletController.CreatePickupDroplet(PickupCatalog.FindPickupIndex(lunarEgg.itemIndex), transform.position, Vector3.zero);
+            //}
         }
     }
 }
