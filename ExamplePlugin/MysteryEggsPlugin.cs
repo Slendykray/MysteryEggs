@@ -82,7 +82,7 @@ namespace MysteryEggs
 
             goldEgg.canRemove = true;
             goldEgg.hidden = false;
-            goldEgg.tags = [ItemTag.AIBlacklist];
+            goldEgg.tags = [ItemTag.AIBlacklist, ItemTag.CannotCopy, ItemTag.FoodRelated, ItemTag.ExtractorUnitBlacklist, ItemTag.CanBeTemporary, ItemTag.Utility];
 
             ItemAPI.Add(new CustomItem(goldEgg, displayRules));
 
@@ -106,7 +106,7 @@ namespace MysteryEggs
 
             lunarEgg.canRemove = true;
             lunarEgg.hidden = false;
-            lunarEgg.tags = [ItemTag.AIBlacklist];
+            lunarEgg.tags = [ItemTag.AIBlacklist, ItemTag.CannotCopy, ItemTag.FoodRelated, ItemTag.ExtractorUnitBlacklist, ItemTag.CanBeTemporary, ItemTag.Utility];
 
             ItemAPI.Add(new CustomItem(lunarEgg, displayRules));
 
@@ -131,7 +131,7 @@ namespace MysteryEggs
 
             voidEgg.canRemove = true;
             voidEgg.hidden = false;
-            voidEgg.tags = [ItemTag.AIBlacklist];
+            voidEgg.tags = [ItemTag.AIBlacklist, ItemTag.CannotCopy, ItemTag.FoodRelated, ItemTag.ExtractorUnitBlacklist, ItemTag.CanBeTemporary, ItemTag.Utility];
 
             voidEgg.requiredExpansion = Addressables.LoadAssetAsync<ExpansionDef>("RoR2/DLC1/Common/DLC1.asset").WaitForCompletion();
 

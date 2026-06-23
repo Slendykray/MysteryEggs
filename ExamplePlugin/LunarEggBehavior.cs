@@ -90,7 +90,7 @@ namespace MysteryEggs
                         {
                             itemDef = MysteryEggsPlugin.lunarOnKill,
                             count = 1
-                        }
+                        },
                     };
 
 

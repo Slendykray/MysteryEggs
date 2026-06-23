@@ -84,7 +84,6 @@ namespace MysteryEggs
 
                     //GameObject newBody = PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Beetle/BeetleBody.prefab").WaitForCompletion(), "lunarboibody");
                     GameObject newBody = PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/Base/BeetleGuard/BeetleGuardBody.prefab").WaitForCompletion(), "lunarboibody");
-                    //GameObject newBody = PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/Base/BeetleGland/BeetleGuardAllyBody.prefab").WaitForCompletion(), "goldboibody");
                     var body = newBody.GetComponent<CharacterBody>();
                     body.baseRegen = 0.6f;
                     body.levelRegen = 0.12f;
