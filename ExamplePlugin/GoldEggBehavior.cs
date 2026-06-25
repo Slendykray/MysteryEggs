@@ -51,7 +51,11 @@ namespace MysteryEggs
                 {
                     //GameObject newMaster = PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Beetle/BeetleMaster.prefab").WaitForCompletion(), "lunarboi");
                     GameObject newMaster = PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/Base/BeetleGuard/BeetleGuardMaster.prefab").WaitForCompletion(), "lunarboi");
-                    //newMaster.AddComponent<Deployable>();
+                    if (!newMaster.GetComponent<Deployable>())
+                    {
+                        newMaster.AddComponent<Deployable>();
+                    }
+                 
 
                     //AISkillDriver aiReturn = newMaster.AddComponent<AISkillDriver>();
                     //aiReturn.moveTargetType = AISkillDriver.TargetType.CurrentLeader;
