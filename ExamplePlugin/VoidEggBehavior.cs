@@ -51,46 +51,8 @@ namespace MysteryEggs
                 {
                     int random = Random.Range(0, 3);
 
-                    GameObject[] fullmasters =
-                        [
-                           Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Nullifier/NullifierMaster.prefab").WaitForCompletion(),
-                           Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/VoidJailer/VoidJailerMaster.prefab").WaitForCompletion(),
-                           Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/VoidMegaCrab/VoidMegaCrabMaster.prefab").WaitForCompletion(),
-                        ];
-
-
-                    GameObject[] bodies =
-                        [
-                            Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Nullifier/NullifierBody.prefab").WaitForCompletion(),
-                            Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/VoidJailer/VoidJailerBody.prefab").WaitForCompletion(),
-                            Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/VoidMegaCrab/VoidMegaCrabBody.prefab").WaitForCompletion(),
-                        ];
-                    
-
-                    GameObject newMaster = PrefabAPI.InstantiateClone(fullmasters[random], "lunarboi");
-                    newMaster.AddComponent<Deployable>();
-
-
-                    AISkillDriver aiReturn = newMaster.AddComponent<AISkillDriver>();
-                    aiReturn.moveTargetType = AISkillDriver.TargetType.CurrentLeader;
-                    aiReturn.movementType = AISkillDriver.MovementType.ChaseMoveTarget;
-                    aiReturn.aimType = AISkillDriver.AimType.AtMoveTarget;
-                    aiReturn.minDistance = 10f;
-                    aiReturn.skillSlot = SkillSlot.None;
-                    aiReturn.customName = "ReturnToLeaderDefault";
-
-
-                    //GameObject newBody = PrefabAPI.InstantiateClone(bodies[random], "lunarboibody");
-                    //var body = newBody.GetComponent<CharacterBody>();
-                    //body.baseRegen = 0.6f;
-                    //body.baseMaxHealth = 500f;
-                    //newMaster.GetComponent<CharacterMaster>().bodyPrefab = newBody;
-
-
-
-
                     CharacterSpawnCard newCard = ScriptableObject.CreateInstance<CharacterSpawnCard>();
-                    newCard.prefab = newMaster;
+                    newCard.prefab = Prefabs.voidMasters[random];
 
                     newCard.itemsToGrant = new ItemCountPair[]
                     {

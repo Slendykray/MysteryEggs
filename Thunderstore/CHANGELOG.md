@@ -1,3 +1,7 @@
+## 1.1.0
+
+- Fixed for multiplayer
+
 ## 1.0.3
 
 - Fixed conflict with WolfoQualityOfLife where beetles would spawn indefinitely

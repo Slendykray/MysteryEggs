@@ -50,39 +50,8 @@ namespace MysteryEggs
                 this.resummonCooldown -= Time.fixedDeltaTime;
                 if (this.resummonCooldown <= 0f)
                 {
-                    GameObject newMaster = PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Lemurian/LemurianMaster.prefab").WaitForCompletion(), "lunarboi");
-                    newMaster.AddComponent<Deployable>();
-
-                    AISkillDriver aiReturn = newMaster.AddComponent<AISkillDriver>();
-                    aiReturn.moveTargetType = AISkillDriver.TargetType.CurrentLeader;
-                    aiReturn.movementType = AISkillDriver.MovementType.ChaseMoveTarget;
-                    aiReturn.aimType = AISkillDriver.AimType.AtMoveTarget;
-                    aiReturn.minDistance = 10f;
-                    aiReturn.skillSlot = SkillSlot.None;
-                    aiReturn.customName = "ReturnToLeaderDefault";
-
-
-
-
-                    foreach (AISkillDriver ais in newMaster.transform)
-                    {
-                        if (ais.customName.Contains("PathFromAfar"))
-                        {
-                            Destroy(ais);
-                        }
-                    }
-
-                    GameObject newBody = PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Lemurian/LemurianBody.prefab").WaitForCompletion(), "lunarboibody");
-                    var body = newBody.GetComponent<CharacterBody>();
-                    body.baseRegen = 0.6f;
-                    body.baseMaxHealth = 500f;
-                    newMaster.GetComponent<CharacterMaster>().bodyPrefab = newBody;
-
-                  
-
-
                     CharacterSpawnCard newCard = ScriptableObject.CreateInstance<CharacterSpawnCard>();
-                    newCard.prefab = newMaster;
+                    newCard.prefab = Prefabs.lemurianMaster;
 
                     newCard.itemsToGrant = new ItemCountPair[]
                     {

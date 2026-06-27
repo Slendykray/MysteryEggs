@@ -43,6 +43,8 @@ namespace MysteryEggs
 
             Asset.Init();
 
+            Prefabs.Init();
+
             InitItems();
 
             InitHelpers();

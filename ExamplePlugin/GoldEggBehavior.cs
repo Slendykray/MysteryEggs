@@ -49,57 +49,8 @@ namespace MysteryEggs
                 this.resummonCooldown -= Time.fixedDeltaTime;
                 if (this.resummonCooldown <= 0f)
                 {
-                    //GameObject newMaster = PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Beetle/BeetleMaster.prefab").WaitForCompletion(), "lunarboi");
-                    GameObject newMaster = PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/Base/BeetleGuard/BeetleGuardMaster.prefab").WaitForCompletion(), "lunarboi");
-                    if (!newMaster.GetComponent<Deployable>())
-                    {
-                        newMaster.AddComponent<Deployable>();
-                    }
-                 
-
-                    //AISkillDriver aiReturn = newMaster.AddComponent<AISkillDriver>();
-                    //aiReturn.moveTargetType = AISkillDriver.TargetType.CurrentLeader;
-                    //aiReturn.movementType = AISkillDriver.MovementType.ChaseMoveTarget;
-                    //aiReturn.aimType = AISkillDriver.AimType.AtMoveTarget;
-                    //aiReturn.minDistance = 10f;
-                    //aiReturn.skillSlot = SkillSlot.None;
-                    //aiReturn.customName = "ReturnToLeaderDefault";
-
-
-                    //AISkillDriver aiLeash = newMaster.AddComponent<AISkillDriver>();
-                    //aiLeash.moveTargetType = AISkillDriver.TargetType.CurrentLeader;
-                    //aiLeash.movementType = AISkillDriver.MovementType.ChaseMoveTarget;
-                    //aiLeash.aimType = AISkillDriver.AimType.AtCurrentLeader;
-                    //aiLeash.minDistance = 50f;
-                    //aiLeash.skillSlot = SkillSlot.None;
-                    //aiLeash.driverUpdateTimerOverride = 3f;
-                    //aiLeash.resetCurrentEnemyOnNextDriverSelection = true;
-                    //aiLeash.customName = "ReturnToOwnerLeash";
-
-
-
-                    //foreach (AISkillDriver ais in newMaster.transform)
-                    //{
-                    //    if (ais.customName.Contains("PathFromAfar"))
-                    //    {
-                    //        Destroy(ais);
-                    //    }
-                    //}
-
-                    //GameObject newBody = PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Beetle/BeetleBody.prefab").WaitForCompletion(), "lunarboibody");
-                    GameObject newBody = PrefabAPI.InstantiateClone(Addressables.LoadAssetAsync<GameObject>("RoR2/Base/BeetleGuard/BeetleGuardBody.prefab").WaitForCompletion(), "lunarboibody");
-                    var body = newBody.GetComponent<CharacterBody>();
-                    body.baseRegen = 0.6f;
-                    body.levelRegen = 0.12f;
-                    //base 500
-                    body.baseMaxHealth = 800f;
-                    //base 12
-                    body.baseDamage = 20f;
-                    newMaster.GetComponent<CharacterMaster>().bodyPrefab = newBody;
-
-
                     CharacterSpawnCard newCard = ScriptableObject.CreateInstance<CharacterSpawnCard>();
-                    newCard.prefab = newMaster;
+                    newCard.prefab = Prefabs.beetleMaster;
 
                     newCard.itemsToGrant = new ItemCountPair[]
                     {
@@ -109,8 +60,6 @@ namespace MysteryEggs
                             count = 1
                         }
                     };
-
-
 
                     DirectorSpawnRequest directorSpawnRequest = new DirectorSpawnRequest(newCard, new DirectorPlacementRule
                     {
